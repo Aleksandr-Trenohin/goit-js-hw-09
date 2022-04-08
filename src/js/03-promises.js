@@ -1,21 +1,26 @@
 import Notiflix from 'notiflix';
 
+
 const FormEl = document.querySelector('.form');
 FormEl.addEventListener('submit', onFormSubmit);
 
+
+
 function onFormSubmit(event) {
   event.preventDefault();
-  const delay = FormEl.delay.value;
-  const step = FormEl.step.value;
-  const amount = FormEl.amount.value;
   
-  const formData = {
+    
+  const delay = event.currentTarget.delay.value;
+  const step = event.currentTarget.step.value;
+  const amount = event.currentTarget.amount.value;
+
+   const formData = {
      position: 1,
       delay,
       step,
      amount,
             };
-  
+ 
   promiseCall(formData);
  
   FormEl.reset(); 
